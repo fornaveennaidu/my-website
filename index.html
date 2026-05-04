@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Daksh. - Premium Home Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- =========================================
+         📱 MOBILE UI (STRICTLY MOBILE)
+         ========================================= -->
+    <div class="mobile-view">
+        
+        <div class="top-banner hero-banner" id="mDynamicTopBanner" style="display: none;">
+            <div class="banner-content">
+                <p>
+                    <span id="mDynBannerTitle"></span> at just 
+                    <span class="price" id="mDynBannerPrice"></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="m-hero-container">
+            <header class="m-header">
+                <div class="m-logo">Daksh<span class="m-dot">.</span></div>
+                <div class="m-location">
+                    <i class="fa-solid fa-location-dot"></i> Bangalore <i class="fa-solid fa-chevron-down m-chevron"></i>
+                </div>
+            </header>
+
+            <h1 class="m-landing-headline">No More Stress About <br><span class="text-orange">Home Services</span></h1>
+
+            <div class="m-offer-container">
+                <span class="m-offer-text">Get upto ₹200 off on your first order!</span>
+            </div>
+
+            <div class="m-features-row">
+                <div class="m-feature-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Free Inspection</div>
+                <div class="m-feature-pill"><i class="fa-solid fa-file-invoice-dollar"></i> No Service Charge</div>
+                <div class="m-feature-pill"><i class="fa-solid fa-shield-halved"></i> Service Guarantee</div>
+            </div>
+        </div>
+
+        <div class="m-bottom-panel">
+            <div class="m-divider-header"><span>FIND SERVICES FOR YOUR NEEDS</span></div>
+            
+            <div class="m-service-h-scroll">
+                <a href="#" class="m-img2-card" style="background-color: #f0f4ff;">
+                    <img src="images/ac.png" alt="AC">
+                    <div class="m-img2-text">
+                        <span class="m-img2-sub">Book via App</span>
+                        <span class="m-img2-main">AC Service</span>
+                    </div>
+                </a>
+                <a href="#" class="m-img2-card" style="background-color: #fdf4ff;">
+                    <img src="images/fridge.png" alt="Fridge">
+                    <div class="m-img2-text">
+                        <span class="m-img2-sub">Book via App</span>
+                        <span class="m-img2-main">Refrigerator</span>
+                    </div>
+                </a>
+                <a href="#" class="m-img2-card" style="background-color: #ecfdf5;">
+                    <img src="images/geyser.png" alt="Geyser">
+                    <div class="m-img2-text">
+                        <span class="m-img2-sub">Book via App</span>
+                        <span class="m-img2-main">Geyser</span>
+                    </div>
+                </a>
+                <a href="#" class="m-img2-card" style="background-color: #fff1f2;">
+                    <img src="images/washing-machine.png" alt="Washing Machine">
+                    <div class="m-img2-text">
+                        <span class="m-img2-sub">Book via App</span>
+                        <span class="m-img2-main">Washing<br>Machine</span>
+                    </div>
+                </a>
+                <a href="#" class="m-img2-card" style="background-color: #f0f9ff;">
+                    <img src="images/water_purifier.png" alt="Water Purifier">
+                    <div class="m-img2-text">
+                        <span class="m-img2-sub">Book via App</span>
+                        <span class="m-img2-main">Water Purifier</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="m-divider-header" style="margin-top: 35px;"><span>SERVICE AREAS IN BANGALORE</span></div>
+            <div class="sa-marquee-wrapper" style="margin: 0 -16px;">
+                <div class="sa-marquee-track">
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> MG Road</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Brigade Road</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Indiranagar</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Koramangala</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Whitefield</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> HSR Layout</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Jayanagar</div>
+                    <!-- Duplicate for loop -->
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> MG Road</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Brigade Road</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Indiranagar</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Koramangala</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Whitefield</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> HSR Layout</div>
+                    <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Jayanagar</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========================================
+         💻 DESKTOP UI (STRICTLY DESKTOP)
+         ========================================= -->
+    <div class="desktop-view">
+        
+        <div class="top-banner hero-banner" id="dynamicTopBanner" style="display: none;">
+            <div class="banner-content">
+                <p>
+                    <span id="dynBannerTitle"></span> at just 
+                    <span class="price" id="dynBannerPrice"></span>
+                </p>
+            </div>
+        </div>
+
+        <nav class="navbar" style="position: sticky; top: 0; z-index: 1000;">
+            <div class="nav-left">
+                <div class="brand-badge"><span class="logo-text">Daksh<span class="logo-dot">.</span></span></div>
+                <div class="location-selector" id="locationDropdownBtn">
+                    <i class="fa-solid fa-location-dot location-icon"></i>
+                    <div class="location-info">
+                        <span class="location-label">MY LOCATION</span>
+                        <span class="location-city">Bangalore <i class="fa-solid fa-chevron-down arrow-icon"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="action-divider"></div>
+                <a href="#" class="btn-support"><i class="fa-brands fa-whatsapp"></i> Support</a>
+                <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Cart</button>
+            </div>
+        </nav>
+
+        <!-- Main Landing Section -->
+        <main class="service-landing-page">
+            <div class="landing-container">
+                
+                <div class="landing-left">
+                    <h1 class="landing-headline">No More Stress About <br><span class="text-orange">Home Services</span></h1>
+                    <p class="hero-subtitle">Experience affordable, reliable & hassle-free home services with Daksh.</p>
+                    
+                    <div class="offer-banner">
+                        <div class="offer-content">
+                            <i class="fa-solid fa-tag offer-icon"></i>
+                            <span>Get up to <strong class="text-orange">₹200 OFF</strong> on your first service booking!</span>
+                        </div>
+                    </div>
+
+                    <div class="features-row">
+                        <div class="feature-pill" style="--pill-bg: #e0f2fe; --pill-text: #0369a1;">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i> Free Inspection
+                        </div>
+                        <div class="feature-pill" style="--pill-bg: #fce7f3; --pill-text: #be185d;">
+                            <i class="fa-solid fa-file-invoice-dollar"></i> No Service Charge
+                        </div>
+                        <div class="feature-pill" style="--pill-bg: #dcfce7; --pill-text: #15803d;">
+                            <i class="fa-solid fa-shield-halved"></i> Service Guarantee
+                        </div>
+                    </div>
+
+                    <div class="service-selection-box">
+                        <h2 class="box-title">Find services for your needs</h2>
+                        <div class="service-grid">
+                            <a href="#" class="ref-service-card">
+                                <span class="ref-sc-title">Air Conditioner</span>
+                                <div class="ref-sc-icon"><img src="images/ac.png" alt="Air Conditioner"></div>
+                            </a>
+                            <a href="#" class="ref-service-card">
+                                <span class="ref-sc-title">Refrigerator</span>
+                                <div class="ref-sc-icon"><img src="images/fridge.png" alt="Refrigerator"></div>
+                            </a>
+                            <a href="#" class="ref-service-card">
+                                <span class="ref-sc-title">Geyser<br><span style="font-size: 13px; font-weight: 500; color: #6b7280;">(Water Heater)</span></span>
+                                <div class="ref-sc-icon"><img src="images/geyser.png" alt="Geyser"></div>
+                            </a>
+                            <a href="#" class="ref-service-card">
+                                <span class="ref-sc-title">Washing Machine</span>
+                                <div class="ref-sc-icon"><img src="images/washing-machine.png" alt="Washing Machine"></div>
+                            </a>
+                            <a href="#" class="ref-service-card full-width-card">
+                                <span class="ref-sc-title">Water Purifier</span>
+                                <div class="ref-sc-icon"><img src="images/water_purifier.png" alt="Water Purifier"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="landing-right">
+                    <div class="banner-masonry-grid">
+                        <div class="visual-banner">
+                            <img src="images/Ac_service.jpg" alt="AC Service" class="banner-img" onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&q=80'">
+                        </div>
+                        <div class="visual-banner">
+                            <img src="images/Fridge_service.jpg" alt="Fridge Service" class="banner-img" onerror="this.src='https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&q=80'">
+                        </div>
+                        <div class="visual-banner">
+                            <img src="images/Geyser_service.jpg" alt="Geyser Service" class="banner-img" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&q=80'">
+                        </div>
+                        <div class="visual-banner">
+                            <img src="images/washing-machine_service.jpg" alt="Washing Machine" class="banner-img" onerror="this.src='https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&q=80'">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Section 2 - Service Areas Sliding Marquee -->
+        <section class="service-areas-section">
+            <div class="sa-container">
+                <h3 class="sa-heading">Service Areas in Bangalore</h3>
+                <div class="sa-marquee-wrapper">
+                    <div class="sa-marquee-track">
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> MG Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Brigade Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Indiranagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Shivajinagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Ulsoor</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Richmond Town</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Lavelle Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Hebbal</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Yelahanka</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Jakkur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Devanahalli</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Hennur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Thanisandra</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Nagawara</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Jayanagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> JP Nagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Banashankari</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> BTM Layout</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Basavanagudi</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Kumaraswamy Layout</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Bannerghatta Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Whitefield</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Marathahalli</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> KR Puram</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> CV Raman Nagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Brookefield</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Mahadevapura</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Varthur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Rajajinagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Malleshwaram</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Yeshwanthpur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Vijayanagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Nagarbhavi</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Magadi Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Electronic City</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Bellandur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Sarjapur Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Outer Ring Road (ORR)</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> HSR Layout</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Koramangala</div>
+
+                        <!-- List 2 (Duplicated for infinite seamless left-to-right loop) -->
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> MG Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Brigade Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Indiranagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Shivajinagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Ulsoor</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Richmond Town</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Lavelle Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Hebbal</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Yelahanka</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Jakkur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Devanahalli</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Hennur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Thanisandra</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Nagawara</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Jayanagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> JP Nagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Banashankari</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> BTM Layout</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Basavanagudi</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Kumaraswamy Layout</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Bannerghatta Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Whitefield</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Marathahalli</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> KR Puram</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> CV Raman Nagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Brookefield</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Mahadevapura</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Varthur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Rajajinagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Malleshwaram</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Yeshwanthpur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Vijayanagar</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Nagarbhavi</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Magadi Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Electronic City</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Bellandur</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Sarjapur Road</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Outer Ring Road (ORR)</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> HSR Layout</div>
+                        <div class="sa-item"><i class="fa-solid fa-map-pin"></i> Koramangala</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
