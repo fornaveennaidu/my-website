@@ -29,7 +29,7 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 @media (max-width: 768px) {
     .mobile-view { 
         display: block !important; 
-        padding-bottom: 95px; /* Padding so footer doesn't hide content */
+        padding-bottom: 125px; /* ✨ Padding so the floating dock doesn't hide content */
     }
 }
 
@@ -133,105 +133,82 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 
 
 /* =========================================
-   ✨ NEW: FIXED MOBILE APP FOOTER (REFERENCE IMG MATCH)
+   ✨ NEW: iPHONE HOME SCREEN DOCK FOOTER
    ========================================= */
 .m-app-footer {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    /* Creates the curved notch in the middle */
-    background: radial-gradient(circle at 50% 0px, transparent 32px, #ffffff 33px);
+    bottom: 20px; /* Floating above bottom screen edge */
+    left: 20px;
+    width: calc(100% - 40px); /* Leaves balanced margin left & right */
+    height: 90px; /* Taller to accommodate both icon AND text */
+    /* Highly transparent frosted Glassmorphism background */
+    background: rgba(255, 255, 255, 0.55); 
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 10px 5px 15px 5px; 
-    filter: drop-shadow(0 -4px 15px rgba(0,0,0,0.06));
+    padding: 5px 10px; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
     z-index: 9999;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-/* Floating Action Button (FAB) in the center */
-.m-app-footer::before {
-    content: '+';
-    position: absolute;
-    left: calc(50% - 28px);
-    top: -28px;
-    width: 56px;
-    height: 56px;
-    background-color: #00b4d8; /* Matching the Teal from the image */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 32px;
-    font-weight: 300;
-    box-shadow: 0 6px 16px rgba(0, 180, 216, 0.4);
-    z-index: 10;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.m-app-footer::before:active {
-    transform: scale(0.9);
-}
-
-/* Push the middle items apart to make room for the notch */
-.m-nav-item:nth-child(2) {
-    margin-right: 40px;
-}
-.m-nav-item:nth-child(3) {
-    margin-left: 40px;
+    border-radius: 30px; /* Modern rounded edges */
 }
 
 .m-nav-item {
     text-decoration: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacks icon and text vertically */
     align-items: center;
-    gap: 6px;
-    color: #9ca3af; /* Inactive grey */
-    transition: all 0.3s ease;
+    justify-content: center;
+    gap: 4px; /* Space between icon and text */
     flex: 1;
-    margin-top: 5px;
+    height: 100%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; 
 }
 
 .m-nav-icon {
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
-/* Grayscale and dim the inactive PNGs */
+/* Dim inactive PNGs slightly and make grayscale */
 .m-nav-icon img {
-    width: 22px;
-    height: 22px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
-    opacity: 0.5; 
+    opacity: 0.4; 
     filter: grayscale(100%);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, filter 0.3s ease; /* Smooth fade, NO bounce */
 }
 
+/* 🎯 FIXED: Visible text for each tab */
 .m-nav-text {
+    display: block; 
     font-size: 11px;
-    font-weight: 500;
+    font-weight: 600;
+    color: #6b7280; /* Inactive grey */
     transition: all 0.3s ease;
 }
 
-/* 🔥 Active state pop-up & color */
+/* 🔥 Active state: NO popup/bounce. Just color restore. */
 .m-nav-item.active {
-    color: #00b4d8; /* Match the reference image teal */
-    transform: translateY(-4px); /* Slight pop up */
+    transform: none !important; /* Forces NO movement */
 }
 
-/* Restore color and scale to active PNG */
 .m-nav-item.active .m-nav-icon img {
     opacity: 1;
-    filter: none;
-    transform: scale(1.15);
+    filter: grayscale(0%);
+}
+
+.m-nav-item.active .m-nav-text {
+    color: #111827; /* Darker text for active tab */
+    font-weight: 700;
 }
 
 
