@@ -17,22 +17,15 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 /* =========================================
    🚨 STRICT ISOLATION BREAKPOINTS 🚨
    ========================================= */
+.desktop-view, .mobile-view { display: none !important; }
 
-.desktop-view, .mobile-view {
-    display: none !important;
-}
-
-@media (min-width: 769px) {
-    .desktop-view { display: block !important; }
-}
-
-@media (max-width: 768px) {
+@media (min-width: 769px) { .desktop-view { display: block !important; } }
+@media (max-width: 768px) { 
     .mobile-view { 
         display: block !important; 
-        padding-bottom: 125px; /* ✨ Padding so the floating dock doesn't hide content */
-    }
+        padding-bottom: 125px; /* Padding for floating dock */
+    } 
 }
-
 
 /* =========================================
    📱 MOBILE UI STYLING 
@@ -45,103 +38,40 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 .m-location i.fa-location-dot { color: var(--accent-orange); font-size: 16px; }
 .m-chevron { font-size: 10px; margin-left: 2px; }
 
-.m-landing-headline {
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.25;
-    margin-bottom: 15px;
-    letter-spacing: -0.5px;
-}
+.m-landing-headline { color: #ffffff; font-size: 28px; font-weight: 800; text-align: center; line-height: 1.25; margin-bottom: 15px; letter-spacing: -0.5px; }
 .text-orange { color: var(--accent-orange); }
 
 .m-offer-container { text-align: center; margin-bottom: 25px; }
 .m-offer-text { color: var(--bg-white); font-size: 14px; font-weight: 500; display: inline-block; text-decoration: underline wavy rgba(255, 255, 255, 0.4); text-underline-offset: 6px; text-decoration-thickness: 2px; }
 
-.m-features-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-.m-feature-pill {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    padding: 6px 12px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    backdrop-filter: blur(4px);
-}
+.m-features-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
+.m-feature-pill { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; padding: 6px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); }
 
 .m-bottom-panel { background: var(--bg-white); border-top-left-radius: 24px; border-top-right-radius: 24px; padding: 24px 16px 30px 16px; margin-top: -16px; position: relative; z-index: 10; }
 .m-divider-header { display: flex; align-items: center; text-align: center; margin-bottom: 20px; color: #9ca3af; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
 .m-divider-header::before, .m-divider-header::after { content: ''; flex: 1; border-bottom: 1px solid #e5e7eb; margin: 0 12px; }
 
-.m-service-h-scroll {
-    display: flex;
-    overflow-x: auto;
-    gap: 12px;
-    padding: 4px 4px 16px 4px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; 
-}
+.m-service-h-scroll { display: flex; overflow-x: auto; gap: 12px; padding: 4px 4px 16px 4px; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .m-service-h-scroll::-webkit-scrollbar { display: none; }
 
-.m-img2-card {
-    flex: 0 0 105px; 
-    height: 140px; 
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 16px 8px;
-    scroll-snap-align: start;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    transition: transform 0.2s ease;
-}
-
+.m-img2-card { flex: 0 0 105px; height: 140px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; padding: 16px 8px; scroll-snap-align: start; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.2s ease; }
 .m-img2-card:active { transform: scale(0.96); }
-
-.m-img2-card img {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
+.m-img2-card img { width: 56px; height: 56px; object-fit: contain; margin-bottom: 10px; }
 .m-img2-text { display: flex; flex-direction: column; gap: 4px; }
 .m-img2-sub { font-size: 9px; color: #6b7280; font-weight: 500; line-height: 1; }
 .m-img2-main { font-size: 11px; font-weight: 700; color: #111827; line-height: 1.2; }
 
-.m-sa-wrapper {
-    margin: 0 -16px;
-    overflow: hidden;
-    position: relative;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-}
-
+.m-sa-wrapper { margin: 0 -16px; overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
 
 /* =========================================
    ✨ NEW: iPHONE HOME SCREEN DOCK FOOTER
    ========================================= */
 .m-app-footer {
     position: fixed;
-    bottom: 20px; /* Floating above bottom screen edge */
+    bottom: 20px; 
     left: 20px;
-    width: calc(100% - 40px); /* Leaves balanced margin left & right */
-    height: 90px; /* Taller to accommodate both icon AND text */
-    /* Highly transparent frosted Glassmorphism background */
+    width: calc(100% - 40px); 
+    height: 90px; 
     background: rgba(255, 255, 255, 0.55); 
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
@@ -152,16 +82,16 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
     padding: 5px 10px; 
     box-shadow: 0 10px 40px rgba(0,0,0,0.12);
     z-index: 9999;
-    border-radius: 30px; /* Modern rounded edges */
+    border-radius: 30px; 
 }
 
 .m-nav-item {
     text-decoration: none;
     display: flex;
-    flex-direction: column; /* Stacks icon and text vertically */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
-    gap: 4px; /* Space between icon and text */
+    gap: 4px; 
     flex: 1;
     height: 100%;
     cursor: pointer;
@@ -177,40 +107,27 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
     transition: all 0.3s ease;
 }
 
-/* Dim inactive PNGs slightly and make grayscale */
 .m-nav-icon img {
     width: 36px;
     height: 36px;
     object-fit: contain;
     opacity: 0.4; 
     filter: grayscale(100%);
-    transition: opacity 0.3s ease, filter 0.3s ease; /* Smooth fade, NO bounce */
+    transition: opacity 0.3s ease, filter 0.3s ease; 
 }
 
-/* 🎯 FIXED: Visible text for each tab */
 .m-nav-text {
     display: block; 
     font-size: 11px;
     font-weight: 600;
-    color: #6b7280; /* Inactive grey */
+    color: #6b7280; 
     transition: all 0.3s ease;
 }
 
 /* 🔥 Active state: NO popup/bounce. Just color restore. */
-.m-nav-item.active {
-    transform: none !important; /* Forces NO movement */
-}
-
-.m-nav-item.active .m-nav-icon img {
-    opacity: 1;
-    filter: grayscale(0%);
-}
-
-.m-nav-item.active .m-nav-text {
-    color: #111827; /* Darker text for active tab */
-    font-weight: 700;
-}
-
+.m-nav-item.active { transform: none !important; }
+.m-nav-item.active .m-nav-icon img { opacity: 1; filter: grayscale(0%); }
+.m-nav-item.active .m-nav-text { color: #111827; font-weight: 700; }
 
 /* =========================================
    💻 DESKTOP NAV STYLING
@@ -240,7 +157,6 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 .btn-support:hover { background-color: rgba(255, 255, 255, 0.1); }
 .btn-cart { background-color: var(--accent-orange); color: var(--bg-white); border: none; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; display: flex; gap: 8px; cursor: pointer; transition: background-color 0.3s; }
 .btn-cart:hover { background-color: var(--hover-orange); }
-
 
 /* =========================================
    ✨ DESKTOP MAIN VIEW: SERVICE LANDING
@@ -332,3 +248,148 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
    ========================================= */
 .service-grid .ref-service-card:nth-child(4) .ref-sc-icon img { transform: scale(1.2); }
 .m-service-h-scroll .m-img2-card:nth-child(4) img { transform: scale(1.2); }
+/* =========================================
+   ✨ NEW: SERVICE DETAILS PAGE (TWO-COLUMN)
+   ========================================= */
+
+/* Desktop Wrapper & Grid */
+.sd-page-wrapper {
+    width: 100%;
+    padding: 60px 0 100px 0;
+    background-color: #f9fafb; /* Soft light background to make the white box pop */
+    min-height: calc(100vh - 75px);
+}
+
+.sd-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Two columns: Left slightly wider */
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Mobile Panel Adjustments */
+.m-service-details-panel {
+    background: #f9fafb;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 30px 20px 40px 20px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Left Column Styling */
+.sd-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sd-headline {
+    font-size: clamp(32px, 4vw, 46px);
+    color: #111827;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.sd-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sd-stars {
+    color: #fbbf24; /* Golden yellow */
+    font-size: 16px;
+    display: flex;
+    gap: 3px;
+}
+
+.sd-rating-text {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.sd-offer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff7ed;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+/* Right Column Booking Box */
+.sd-right {
+    width: 100%;
+}
+
+.sd-booking-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.sd-box-top {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sd-slot-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sd-slot-time {
+    font-size: 18px;
+    color: #111827;
+    font-weight: 800;
+}
+
+.sd-divider {
+    border: none;
+    border-top: 1px dashed #e5e7eb;
+    margin: 24px 0;
+}
+
+.sd-box-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.sd-select-label {
+    font-size: 16px;
+    color: #111827;
+    font-weight: 700;
+}
+
+/* Responsiveness for Service Page */
+@media (max-width: 992px) {
+    .sd-container {
+        grid-template-columns: 1fr; /* Stack columns on tablets */
+        gap: 40px;
+        padding: 0 24px;
+    }
+}
