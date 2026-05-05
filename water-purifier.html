@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Water Purifier Service - Daksh.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- =========================================
+         📱 MOBILE UI
+         ========================================= -->
+    <div class="mobile-view">
+        
+        <div class="m-hero-container">
+            <header class="m-header">
+                <div class="m-logo">
+                    <a href="index.html" style="text-decoration: none; color: white;">Daksh<span class="m-dot">.</span></a>
+                </div>
+                <div class="m-location">
+                    <i class="fa-solid fa-location-dot"></i> Bangalore <i class="fa-solid fa-chevron-down m-chevron"></i>
+                </div>
+            </header>
+        </div>
+
+        <div class="m-service-details-panel">
+            <!-- Left Side Content (Stacked for Mobile) -->
+            <div class="sd-left">
+                <h1 class="sd-headline">Water Purifier Service</h1>
+                <div class="sd-rating-row">
+                    <div class="sd-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="sd-rating-text">Coming soon to view</span>
+                </div>
+                <div class="sd-offer-badge">
+                    <i class="fa-solid fa-tag"></i> Offer
+                </div>
+            </div>
+
+            <!-- Right Side Content (Stacked for Mobile) -->
+            <div class="sd-right">
+                <div class="sd-booking-box">
+                    <div class="sd-box-top">
+                        <span class="sd-slot-label">Next Available Slot</span>
+                        <span class="sd-slot-time">Tomorrow, 10:00 AM - 11:30 AM</span>
+                    </div>
+                    <hr class="sd-divider">
+                    <div class="sd-box-bottom">
+                        <span class="sd-select-label">Select the service type</span>
+                        <!-- You can add your dynamic service options here later -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📱 iPHONE STYLE APP DOCK -->
+        <nav class="m-app-footer">
+            <a href="index.html" class="m-nav-item">
+                <div class="m-nav-icon"><img src="images/home.png" alt="Home"></div>
+                <span class="m-nav-text">Home</span>
+            </a>
+            <a href="#" class="m-nav-item">
+                <div class="m-nav-icon"><img src="images/my_bookings.png" alt="Bookings"></div>
+                <span class="m-nav-text">Bookings</span>
+            </a>
+            <a href="#" class="m-nav-item">
+                <div class="m-nav-icon"><img src="images/exclusive_offer.png" alt="Offers"></div>
+                <span class="m-nav-text">Offers</span>
+            </a>
+            <a href="#" class="m-nav-item">
+                <div class="m-nav-icon"><img src="images/account.png" alt="Account"></div>
+                <span class="m-nav-text">Account</span>
+            </a>
+        </nav>
+
+    </div>
+
+
+    <!-- =========================================
+         💻 DESKTOP UI
+         ========================================= -->
+    <div class="desktop-view">
+        
+        <!-- Desktop Navbar -->
+        <nav class="navbar" style="position: sticky; top: 0; z-index: 1000;">
+            <div class="nav-left">
+                <div class="brand-badge">
+                    <a href="index.html" style="text-decoration: none;">
+                        <span class="logo-text">Daksh<span class="logo-dot">.</span></span>
+                    </a>
+                </div>
+                <div class="location-selector" id="locationDropdownBtn">
+                    <i class="fa-solid fa-location-dot location-icon"></i>
+                    <div class="location-info">
+                        <span class="location-label">MY LOCATION</span>
+                        <span class="location-city">Bangalore <i class="fa-solid fa-chevron-down arrow-icon"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="action-divider"></div>
+                <a href="#" class="btn-support"><i class="fa-brands fa-whatsapp"></i> Support</a>
+                <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Cart</button>
+            </div>
+        </nav>
+
+        <!-- Service Details Two-Column Layout -->
+        <main class="sd-page-wrapper">
+            <div class="sd-container">
+                
+                <!-- Left Column -->
+                <div class="sd-left">
+                    <h1 class="sd-headline">Water Purifier Service</h1>
+                    
+                    <div class="sd-rating-row">
+                        <div class="sd-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="sd-rating-text">Coming soon to view</span>
+                    </div>
+
+                    <div class="sd-offer-badge">
+                        <i class="fa-solid fa-tag"></i> Offer
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="sd-right">
+                    <div class="sd-booking-box">
+                        <div class="sd-box-top">
+                            <span class="sd-slot-label">Next Available Slot</span>
+                            <span class="sd-slot-time">Tomorrow, 10:00 AM - 11:30 AM</span>
+                        </div>
+                        
+                        <hr class="sd-divider">
+                        
+                        <div class="sd-box-bottom">
+                            <span class="sd-select-label">Select the service type</span>
+                            <!-- Dynamic service types will render here -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
