@@ -11,12 +11,13 @@
 <body>
 
     <!-- =========================================
-         📱 MOBILE UI
+         📱 MOBILE UI (NEW APP-STYLE LAYOUT)
          ========================================= -->
     <div class="mobile-view">
         
-        <div class="m-hero-container">
-            <header class="m-header">
+        <!-- Existing Dark Navbar -->
+        <div class="m-hero-container" style="padding-bottom: 15px;">
+            <header class="m-header" style="margin-bottom: 0;">
                 <div class="m-logo">
                     <a href="index.html" style="text-decoration: none; color: white;">Daksh<span class="m-dot">.</span></a>
                 </div>
@@ -26,39 +27,91 @@
             </header>
         </div>
 
-        <div class="m-service-details-panel">
-            <!-- Left Side Content (Stacked for Mobile) -->
-            <div class="sd-left">
-                <h1 class="sd-headline">Water Purifier Service</h1>
-                <div class="sd-rating-row">
-                    <div class="sd-stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="sd-rating-text">Coming soon to view</span>
-                </div>
-                <div class="sd-offer-badge">
-                    <i class="fa-solid fa-tag"></i> Offer
+        <!-- NEW Reference Match Content -->
+        <div class="m-uc-container">
+            
+            <div class="m-uc-title-row">
+                <h1 class="m-uc-h1">Water Purifier<br>Service</h1>
+                <div class="m-uc-slot-badge">
+                    <div class="m-uc-slot-top"><i class="fa-solid fa-clock"></i> Earliest</div>
+                    <div class="m-uc-slot-bottom">Tomorrow, 10:30 AM</div>
                 </div>
             </div>
 
-            <!-- Right Side Content (Stacked for Mobile) -->
-            <div class="sd-right">
-                <div class="sd-booking-box">
-                    <div class="sd-box-top">
-                        <span class="sd-slot-label">Next Available Slot</span>
-                        <span class="sd-slot-time">Tomorrow, 10:00 AM - 11:30 AM</span>
-                    </div>
-                    <hr class="sd-divider">
-                    <div class="sd-box-bottom">
-                        <span class="sd-select-label">Select the service type</span>
-                        <!-- You can add your dynamic service options here later -->
-                    </div>
+            <div class="m-uc-rating">
+                <i class="fa-solid fa-star"></i> <span>4.85</span> (1.2 M bookings)
+            </div>
+
+            <div class="m-uc-warranty-box">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Up to 30 days service warranty</span>
+                </div>
+                <i class="fa-solid fa-chevron-right" style="color: #111827;"></i>
+            </div>
+
+            <div class="m-uc-coupon-box">
+                <i class="fa-solid fa-tag" style="color: #10b981; font-size: 18px;"></i>
+                <div>
+                    <div class="m-uc-coupon-title">Free Service Charge</div>
+                    <div class="m-uc-coupon-desc">Valid on your first booking</div>
                 </div>
             </div>
+            
+        </div>
+
+        <!-- Full width thick grey divider -->
+        <div class="m-uc-thick-divider"></div>
+
+        <div class="m-uc-container" style="padding-bottom: 20px;">
+            <h2 class="m-uc-section-title">Select the type of service</h2>
+
+            <!-- Service Item 1 -->
+            <div class="m-uc-service-card">
+                <div class="m-uc-card-left">
+                    <h3 class="m-uc-service-title">Regular RO Service check-up</h3>
+                    <div class="m-uc-service-rating"><i class="fa-solid fa-star"></i> <span>4.77</span> (368K reviews)</div>
+                    <div class="m-uc-service-price">Starts at ₹499</div>
+                    
+                    <hr class="m-uc-dotted-hr">
+                    
+                    <ul class="m-uc-service-list">
+                        <li>₹149 visitation fee will be adjusted in the final repair quote</li>
+                    </ul>
+                    <a href="#" class="m-uc-view-details">View details</a>
+                </div>
+                <div class="m-uc-card-right">
+                    <div class="m-uc-image-wrap">
+                        <img src="images/water_purifier.png" alt="RO Service">
+                        <button class="m-uc-add-btn">Add</button>
+                    </div>
+                    <span class="m-uc-options-text">2 options</span>
+                </div>
+            </div>
+
+            <!-- Service Item 2 -->
+            <div class="m-uc-service-card">
+                <div class="m-uc-card-left">
+                    <h3 class="m-uc-service-title">Complete Filter Replacement</h3>
+                    <div class="m-uc-service-rating"><i class="fa-solid fa-star"></i> <span>4.82</span> (201K reviews)</div>
+                    <div class="m-uc-service-price">Starts at ₹1499</div>
+                    
+                    <hr class="m-uc-dotted-hr">
+                    
+                    <ul class="m-uc-service-list">
+                        <li>Includes pre-filter, sediment filter, and carbon filter replacement</li>
+                    </ul>
+                    <a href="#" class="m-uc-view-details">View details</a>
+                </div>
+                <div class="m-uc-card-right">
+                    <div class="m-uc-image-wrap">
+                        <img src="images/water_purifier.png" alt="Filter Replace">
+                        <button class="m-uc-add-btn">Add</button>
+                    </div>
+                    <span class="m-uc-options-text">1 option</span>
+                </div>
+            </div>
+
         </div>
 
         <!-- 📱 iPHONE STYLE APP DOCK -->
@@ -85,11 +138,10 @@
 
 
     <!-- =========================================
-         💻 DESKTOP UI
+         💻 DESKTOP UI (UNCHANGED)
          ========================================= -->
     <div class="desktop-view">
         
-        <!-- Desktop Navbar -->
         <nav class="navbar" style="position: sticky; top: 0; z-index: 1000;">
             <div class="nav-left">
                 <div class="brand-badge">
@@ -112,11 +164,9 @@
             </div>
         </nav>
 
-        <!-- Service Details Two-Column Layout -->
         <main class="sd-page-wrapper">
             <div class="sd-container">
                 
-                <!-- Left Column -->
                 <div class="sd-left">
                     <h1 class="sd-headline">Water Purifier Service</h1>
                     
@@ -136,7 +186,6 @@
                     </div>
                 </div>
 
-                <!-- Right Column -->
                 <div class="sd-right">
                     <div class="sd-booking-box">
                         <div class="sd-box-top">
@@ -147,8 +196,7 @@
                         <hr class="sd-divider">
                         
                         <div class="sd-box-bottom">
-                            <span class="sd-select-label">Select the service type</span>
-                            <!-- Dynamic service types will render here -->
+                            <span class="sd-select-label">Select the type of service</span>
                         </div>
                     </div>
                 </div>
