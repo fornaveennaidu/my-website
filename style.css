@@ -29,7 +29,7 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 @media (max-width: 768px) {
     .mobile-view { 
         display: block !important; 
-        padding-bottom: 85px; /* ✨ Padding so footer doesn't hide content */
+        padding-bottom: 95px; /* Padding so footer doesn't hide content */
     }
 }
 
@@ -132,21 +132,59 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 }
 
 
-/* ✨ NEW: FIXED MOBILE APP FOOTER STYLES */
+/* =========================================
+   ✨ NEW: FIXED MOBILE APP FOOTER (REFERENCE IMG MATCH)
+   ========================================= */
 .m-app-footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #ffffff;
+    height: 70px;
+    /* Creates the curved notch in the middle */
+    background: radial-gradient(circle at 50% 0px, transparent 32px, #ffffff 33px);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 12px 10px 20px 10px; /* Padding for iOS bottom bar area */
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+    padding: 10px 5px 15px 5px; 
+    filter: drop-shadow(0 -4px 15px rgba(0,0,0,0.06));
     z-index: 9999;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+/* Floating Action Button (FAB) in the center */
+.m-app-footer::before {
+    content: '+';
+    position: absolute;
+    left: calc(50% - 28px);
+    top: -28px;
+    width: 56px;
+    height: 56px;
+    background-color: #00b4d8; /* Matching the Teal from the image */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    box-shadow: 0 6px 16px rgba(0, 180, 216, 0.4);
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.m-app-footer::before:active {
+    transform: scale(0.9);
+}
+
+/* Push the middle items apart to make room for the notch */
+.m-nav-item:nth-child(2) {
+    margin-right: 40px;
+}
+.m-nav-item:nth-child(3) {
+    margin-left: 40px;
 }
 
 .m-nav-item {
@@ -154,20 +192,17 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     color: #9ca3af; /* Inactive grey */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
     flex: 1;
+    margin-top: 5px;
 }
 
 .m-nav-icon {
-    width: 48px;
-    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
-    transition: all 0.3s ease;
 }
 
 /* Grayscale and dim the inactive PNGs */
@@ -181,20 +216,15 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 }
 
 .m-nav-text {
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
 /* 🔥 Active state pop-up & color */
 .m-nav-item.active {
-    color: var(--accent-orange);
-    transform: translateY(-8px); /* Pop up */
-}
-
-/* Highlight bubble behind active icon */
-.m-nav-item.active .m-nav-icon {
-    background-color: rgba(255, 122, 0, 0.1); 
+    color: #00b4d8; /* Match the reference image teal */
+    transform: translateY(-4px); /* Slight pop up */
 }
 
 /* Restore color and scale to active PNG */
