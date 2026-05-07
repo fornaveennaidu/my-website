@@ -1,5 +1,5 @@
 :root {
-    --primary-green: #ea5720;
+    --primary-green: #204e41;
     --primary-dark: #111827;
     --accent-orange: #FF7A00; 
     --hover-orange: #e66b00;
@@ -17,239 +17,15 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 /* =========================================
    🚨 STRICT ISOLATION BREAKPOINTS 🚨
    ========================================= */
+.desktop-view, .mobile-view { display: none !important; }
 
-.desktop-view, .mobile-view {
-    display: none !important;
-}
-
-@media (min-width: 769px) {
-    .desktop-view { display: block !important; }
-}
-
-@media (max-width: 768px) {
+@media (min-width: 769px) { .desktop-view { display: block !important; } }
+@media (max-width: 768px) { 
     .mobile-view { 
         display: block !important; 
-        padding-bottom: 125px; /* ✨ Padding so the floating dock doesn't hide content */
-    }
+        padding-bottom: 125px; /* Padding for floating dock */
+    } 
 }
-
-
-/* =========================================
-   📱 MOBILE UI STYLING 
-   ========================================= */
-.m-hero-container { background: #ea5520; padding: 12px 16px 30px 16px; }
-.m-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-.m-logo { font-size: 24px; font-weight: 800; color: var(--bg-white); letter-spacing: -0.5px; }
-.m-dot { color: var(--accent-orange); }
-.m-location { font-size: 14px; font-weight: 600; color: var(--bg-white); display: flex; align-items: center; gap: 6px; }
-.m-location i.fa-location-dot { color: var(--accent-orange); font-size: 16px; }
-.m-chevron { font-size: 10px; margin-left: 2px; }
-
-.m-landing-headline {
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.25;
-    margin-bottom: 15px;
-    letter-spacing: -0.5px;
-}
-.text-orange { color: var(--accent-orange); }
-
-.m-offer-container { text-align: center; margin-bottom: 25px; }
-.m-offer-text { color: var(--bg-white); font-size: 14px; font-weight: 500; display: inline-block; text-decoration: underline wavy rgba(255, 255, 255, 0.4); text-underline-offset: 6px; text-decoration-thickness: 2px; }
-
-.m-features-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-.m-feature-pill {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    padding: 6px 12px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    backdrop-filter: blur(4px);
-}
-
-.m-bottom-panel { background: var(--bg-white); border-top-left-radius: 24px; border-top-right-radius: 24px; padding: 24px 16px 30px 16px; margin-top: -16px; position: relative; z-index: 10; }
-.m-divider-header { display: flex; align-items: center; text-align: center; margin-bottom: 20px; color: #9ca3af; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
-.m-divider-header::before, .m-divider-header::after { content: ''; flex: 1; border-bottom: 1px solid #e5e7eb; margin: 0 12px; }
-
-.m-service-h-scroll {
-    display: flex;
-    overflow-x: auto;
-    gap: 12px;
-    padding: 4px 4px 16px 4px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; 
-}
-.m-service-h-scroll::-webkit-scrollbar { display: none; }
-
-.m-img2-card {
-    flex: 0 0 105px; 
-    height: 140px; 
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 16px 8px;
-    scroll-snap-align: start;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    transition: transform 0.2s ease;
-}
-
-.m-img2-card:active { transform: scale(0.96); }
-
-.m-img2-card img {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.m-img2-text { display: flex; flex-direction: column; gap: 4px; }
-.m-img2-sub { font-size: 9px; color: #6b7280; font-weight: 500; line-height: 1; }
-.m-img2-main { font-size: 11px; font-weight: 700; color: #111827; line-height: 1.2; }
-
-.m-sa-wrapper {
-    margin: 0 -16px;
-    overflow: hidden;
-    position: relative;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-}
-
-
-/* =========================================
-   ✨ NEW: iPHONE HOME SCREEN DOCK FOOTER
-   ========================================= */
-.m-app-footer {
-    position: fixed;
-    bottom: 20px; 
-    left: 20px;
-    width: calc(100% - 40px); 
-    height: 90px; 
-    background: rgba(255, 255, 255, 0.55); 
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 5px 10px; 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-    z-index: 9999;
-    border-radius: 30px; 
-}
-
-.m-nav-item {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    gap: 4px; 
-    flex: 1;
-    height: 100%;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent; 
-}
-
-.m-nav-icon {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.m-nav-icon img {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    opacity: 0.4; 
-    filter: grayscale(100%);
-    transition: opacity 0.3s ease, filter 0.3s ease; 
-}
-
-.m-nav-text {
-    display: block; 
-    font-size: 11px;
-    font-weight: 600;
-    color: #6b7280; 
-    transition: all 0.3s ease;
-}
-
-.m-nav-item.active { transform: none !important; }
-.m-nav-item.active .m-nav-icon img { opacity: 1; filter: grayscale(0%); }
-.m-nav-item.active .m-nav-text { color: #111827; font-weight: 700; }
-
-/* =========================================
-   ✨ NEW APP-STYLE SERVICE DETAILS (MOBILE)
-   ========================================= */
-@media (max-width: 768px) {
-    .m-uc-container { padding: 24px 16px 0 16px; background: #ffffff; }
-    .m-uc-title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-    .m-uc-h1 { font-size: 24px; font-weight: 800; color: #111827; line-height: 1.25; }
-    
-    .m-uc-slot-badge { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; text-align: center; flex-shrink: 0; margin-left: 10px; }
-    .m-uc-slot-top { background: #ecfdf5; color: #059669; font-size: 10px; font-weight: 700; padding: 4px 8px; }
-    .m-uc-slot-bottom { background: #ffffff; color: #111827; font-size: 11px; font-weight: 700; padding: 6px 8px; }
-
-    .m-uc-rating { font-size: 13px; color: #4b5563; display: flex; align-items: center; gap: 6px; margin-bottom: 24px; font-weight: 500; }
-    .m-uc-rating i { color: #111827; font-size: 12px; }
-    .m-uc-rating span { border-bottom: 1px dashed #9ca3af; color: #111827; font-weight: 700; }
-
-    .m-uc-warranty-box { background: #f9fafb; border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 500; color: #4b5563; margin-bottom: 16px; }
-    .m-uc-warranty-box i.fa-shield-halved { font-size: 16px; color: #111827; }
-
-    .m-uc-coupon-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 24px; }
-    .m-uc-coupon-title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
-    .m-uc-coupon-desc { font-size: 12px; color: #6b7280; }
-
-    .m-uc-thick-divider { height: 8px; background-color: #f3f4f6; width: 100%; }
-
-    .m-uc-section-title { font-size: 20px; font-weight: 800; color: #111827; margin: 24px 0 20px 0; }
-
-    .m-uc-service-card { display: flex; gap: 16px; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #e5e7eb; }
-    .m-uc-service-card:last-child { border-bottom: none; margin-bottom: 0; }
-    .m-uc-card-left { flex: 1; }
-    .m-uc-service-title { font-size: 15px; font-weight: 700; color: #111827; line-height: 1.4; margin-bottom: 6px; }
-    
-    .m-uc-service-rating { font-size: 12px; color: #6b7280; display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
-    .m-uc-service-rating i { color: #111827; font-size: 10px; }
-    .m-uc-service-rating span { border-bottom: 1px dashed #9ca3af; color: #111827; font-weight: 700; }
-    
-    .m-uc-service-price { font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 12px; }
-    .m-uc-dotted-hr { border: none; border-top: 1px dashed #d1d5db; margin: 12px 0; }
-    
-    .m-uc-service-list { list-style: disc; padding-left: 16px; margin: 0 0 16px 0; color: #4b5563; font-size: 12px; line-height: 1.5; }
-    .m-uc-service-list li { margin-bottom: 4px; padding-left: 4px; }
-    .m-uc-service-list li::marker { color: #111827; font-size: 10px; }
-    
-    .m-uc-view-details { font-size: 13px; font-weight: 700; color: #6d28d9; text-decoration: none; }
-
-    .m-uc-card-right { width: 100px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
-    .m-uc-image-wrap { width: 100px; height: 100px; background-color: #f3f4f6; border-radius: 12px; position: relative; display: flex; align-items: center; justify-content: center; }
-    .m-uc-image-wrap img { width: 80%; height: 80%; object-fit: contain; }
-    
-    .m-uc-add-btn { position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; color: #6d28d9; font-weight: 700; font-size: 13px; padding: 6px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); cursor: pointer; }
-    .m-uc-options-text { font-size: 11px; color: #6b7280; margin-top: 22px; }
-}
-
 
 /* =========================================
    💻 DESKTOP NAV STYLING
@@ -301,17 +77,41 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 .box-title { font-size: 18px; font-weight: 800; color: #111827; margin-bottom: 16px; }
 .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 
-.ref-service-card { border: 1px solid transparent; border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-.ref-service-card:nth-child(1) { background-color: #eef2ff; border-color: #e0e7ff; } 
-.ref-service-card:nth-child(2) { background-color: #fdf4ff; border-color: #fae8ff; } 
-.ref-service-card:nth-child(3) { background-color: #ecfdf5; border-color: #d1fae5; } 
-.ref-service-card:nth-child(4) { background-color: #fff1f2; border-color: #ffe4e6; } 
-.ref-service-card:nth-child(5) { background-color: #f0f9ff; border-color: #e0f2fe; } 
-.ref-service-card:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+/* 🎨 BRAND ALIGNED SERVICE CARDS (DESKTOP) */
+.ref-service-card,
+.ref-service-card:nth-child(n) { 
+    background-color: #ffffff !important; 
+    border: 1px solid #f3f4f6 !important; 
+    border-radius: 12px; 
+    padding: 12px 16px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    text-decoration: none; 
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important; 
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.ref-service-card:hover { 
+    transform: translateY(-3px) scale(1.02) !important; 
+    box-shadow: 0 10px 24px rgba(32, 78, 65, 0.08) !important; 
+    border-color: rgba(32, 78, 65, 0.15) !important; 
+}
+
 .full-width-card { grid-column: 1 / -1; }
 
 .ref-sc-title { font-size: 13px; font-weight: 700; color: #1f2937; line-height: 1.3; }
-.ref-sc-icon { width: 60px; height: 60px; border-radius: 14px; background: #ffffff !important; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+
+/* Desktop Brand Tint Icon Box */
+.ref-sc-icon { 
+    width: 60px; height: 60px; border-radius: 14px; 
+    background-color: #f6f8f7 !important; 
+    border: 1px solid rgba(32, 78, 65, 0.05);
+    display: flex; align-items: center; justify-content: center; 
+    transition: transform 0.3s ease; 
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+}
+
 .ref-service-card:hover .ref-sc-icon { transform: scale(1.1); }
 .ref-sc-icon img { width: 38px; height: 38px; object-fit: contain; }
 
@@ -340,36 +140,6 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 .sa-item:hover i { color: var(--accent-orange); }
 @keyframes scrollLeftToRight { 0% { transform: translateX(calc(-50% - 20px)); } 100% { transform: translateX(0); } }
 
-/* =========================================
-   📱 RESPONSIVENESS OVERRIDES
-   ========================================= */
-@media (max-width: 992px) {
-    .landing-container { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
-    .banner-masonry-grid { column-count: 2; column-gap: 16px; }
-    .visual-banner { margin-bottom: 16px; }
-    .sa-container { padding: 0 24px; }
-}
-@media (max-width: 768px) {
-    .sa-item { font-size: 14px; gap: 6px; }
-    .sa-item i { font-size: 12px; }
-    .sa-marquee-track { gap: 24px; }
-}
-@media (max-width: 576px) {
-    .service-landing-page { padding: 20px 0 30px 0; }
-    .landing-container { padding: 0 16px; }
-    .offer-content { font-size: 13px; }
-    .feature-pill { font-size: 11px; padding: 6px 12px; }
-    .service-grid { grid-template-columns: 1fr; } 
-    .banner-masonry-grid { column-count: 1; }
-    .visual-banner:nth-child(n) { aspect-ratio: 16 / 9; }
-    .sa-container { padding: 0 16px; }
-}
-
-/* =========================================
-   🎯 FIX: VISUALLY ENLARGE WASHING MACHINE ICON
-   ========================================= */
-.service-grid .ref-service-card:nth-child(4) .ref-sc-icon img { transform: scale(1.2); }
-.m-service-h-scroll .m-img2-card:nth-child(4) img { transform: scale(1.2); }
 
 /* =========================================
    ✨ SERVICE DETAILS PAGE (TWO-COLUMN DESKTOP)
@@ -393,6 +163,224 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 .sd-box-bottom { display: flex; flex-direction: column; }
 .sd-select-label { font-size: 16px; color: #111827; font-weight: 700; }
 
+
+/* =========================================
+   📱 MOBILE-ONLY CSS OVERRIDES
+   ========================================= */
 @media (max-width: 992px) {
+    .landing-container { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+    .banner-masonry-grid { column-count: 2; column-gap: 16px; }
+    .visual-banner { margin-bottom: 16px; }
+    .sa-container { padding: 0 24px; }
     .sd-container { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+}
+
+@media (max-width: 768px) {
+    /* 🎨 BRAND ALIGNED MOBILE HERO (Custom Gradient) */
+    .m-hero-container { 
+        background: linear-gradient(135deg, #f5d79f, #ff7b47) !important; 
+        padding: 16px 16px 40px 16px; 
+        position: relative;
+        z-index: 20;
+    }
+    .m-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .m-logo { font-size: 24px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; }
+    
+    /* Dark blue accents */
+    .m-dot { color: #2b3656 !important; }
+    .m-location i.fa-location-dot { color: #2b3656 !important; }
+    .text-dark-blue { color: #2b3656; }
+    
+    .m-location { font-size: 14px; font-weight: 600; color: #ffffff; display: flex; align-items: center; gap: 6px; }
+    .m-chevron { font-size: 10px; margin-left: 2px; }
+
+    /* Split Layout Classes */
+    .m-hero-split {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+        position: relative;
+        min-height: 180px; 
+    }
+    .m-hero-left {
+        width: 60%;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .m-hero-right { width: 40%; }
+    
+    /* Bigger Hero Image without gap/animation */
+    .m-hero-right img {
+        position: absolute;
+        bottom: -90px; /* Aligns flush with the bottom padding border */
+        right: -15px;
+        width: 280px; /* Increased size */
+        z-index: 20;
+        filter: drop-shadow(0 15px 20px rgba(0,0,0,0.2));
+        /* Animation fully removed as requested */
+    }
+    
+    .m-landing-headline {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 800;
+        text-align: left;
+        line-height: 1.25;
+        margin-bottom: 8px;
+        letter-spacing: -0.5px;
+    }
+    
+    .m-hero-sub {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 11px;
+        line-height: 1.4;
+        margin-bottom: 16px;
+        font-weight: 400;
+    }
+    
+    .m-offer-badge {
+        background: #ffffff;
+        color: #ea5720;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin-bottom: 16px;
+    }
+    
+    .m-hero-features { display: flex; flex-direction: column; gap: 8px; }
+    .m-hero-features div { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #ffffff; font-weight: 600; }
+    .m-hero-features i { color: #2b3656; font-size: 12px; }
+
+    /* Home Page Panels */
+    .m-bottom-panel { background: var(--bg-white); border-top-left-radius: 24px; border-top-right-radius: 24px; padding: 24px 16px 30px 16px; margin-top: -16px; position: relative; z-index: 10; }
+    .m-divider-header { display: flex; align-items: center; text-align: center; margin-bottom: 20px; color: #9ca3af; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+    .m-divider-header::before, .m-divider-header::after { content: ''; flex: 1; border-bottom: 1px solid #e5e7eb; margin: 0 12px; }
+    
+    .m-service-h-scroll { display: flex; overflow-x: auto; gap: 12px; padding: 4px 4px 16px 4px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .m-service-h-scroll::-webkit-scrollbar { display: none; }
+
+    /* 🎨 BRAND ALIGNED MOBILE CARDS (White + Soft Shadow) */
+    .m-img2-card,
+    .m-img2-card:nth-child(n) { 
+        flex: 0 0 105px; 
+        height: 140px; 
+        display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; padding: 16px 8px; scroll-snap-align: start; text-align: center;
+        background-color: #ffffff !important; 
+        border: 1px solid #f3f4f6 !important;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; 
+    }
+    .m-img2-card:active { 
+        transform: scale(0.96) !important; 
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+        border-color: var(--accent-orange) !important; 
+    }
+    .m-img2-card img { width: 56px; height: 56px; object-fit: contain; margin-bottom: 10px; }
+    .m-img2-text { display: flex; flex-direction: column; gap: 4px; }
+    .m-img2-sub { font-size: 9px; color: #6b7280; font-weight: 500; line-height: 1; }
+    .m-img2-main { font-size: 11px; font-weight: 700; color: #111827; line-height: 1.2; }
+
+    /* Fix Washing Machine Icon Size globally */
+    .service-grid .ref-service-card:nth-child(4) .ref-sc-icon img { transform: scale(1.2); }
+    .m-service-h-scroll .m-img2-card:nth-child(4) img { transform: scale(1.2); }
+
+    .m-sa-wrapper { margin: 0 -16px; overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
+    .sa-item { font-size: 14px; gap: 6px; }
+    .sa-item i { font-size: 12px; }
+    .sa-marquee-track { gap: 24px; }
+
+    /* ✨ iPHONE HOME SCREEN DOCK FOOTER */
+    .m-app-footer {
+        position: fixed;
+        bottom: 20px; 
+        left: 20px;
+        width: calc(100% - 40px); 
+        height: 90px; 
+        background: rgba(255, 255, 255, 0.55); 
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 10px; 
+        box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        z-index: 9999;
+        border-radius: 30px; 
+    }
+    .m-nav-item { text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; flex: 1; height: 100%; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .m-nav-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+    .m-nav-icon img { width: 36px; height: 36px; object-fit: contain; opacity: 0.4; filter: grayscale(100%); transition: opacity 0.3s ease, filter 0.3s ease; }
+    .m-nav-text { display: block; font-size: 11px; font-weight: 600; color: #6b7280; transition: all 0.3s ease; }
+    .m-nav-item.active { transform: none !important; }
+    .m-nav-item.active .m-nav-icon img { opacity: 1; filter: grayscale(0%); }
+    .m-nav-item.active .m-nav-text { color: #111827; font-weight: 700; }
+
+    /* ✨ APP-STYLE SERVICE DETAILS (MOBILE) */
+    .m-uc-container { padding: 24px 16px 0 16px; background: #ffffff; position: relative; z-index: 5; }
+    .m-uc-title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .m-uc-h1 { font-size: 24px; font-weight: 800; color: #111827; line-height: 1.25; }
+    
+    .m-uc-slot-badge { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; text-align: center; flex-shrink: 0; margin-left: 10px; }
+    .m-uc-slot-top { background: #ecfdf5; color: #059669; font-size: 10px; font-weight: 700; padding: 4px 8px; }
+    .m-uc-slot-bottom { background: #ffffff; color: #111827; font-size: 11px; font-weight: 700; padding: 6px 8px; }
+
+    .m-uc-rating { font-size: 13px; color: #4b5563; display: flex; align-items: center; gap: 6px; margin-bottom: 24px; font-weight: 500; }
+    .m-uc-rating i { color: #111827; font-size: 12px; }
+    .m-uc-rating span { border-bottom: 1px dashed #9ca3af; color: #111827; font-weight: 700; }
+
+    .m-uc-warranty-box { background: #f9fafb; border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 500; color: #4b5563; margin-bottom: 16px; }
+    .m-uc-warranty-box i.fa-shield-halved { font-size: 16px; color: #111827; }
+
+    .m-uc-coupon-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 24px; }
+    .m-uc-coupon-title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+    .m-uc-coupon-desc { font-size: 12px; color: #6b7280; }
+
+    .m-uc-thick-divider { height: 8px; background-color: #f3f4f6; width: 100%; position: relative; z-index: 5; }
+    .m-uc-section-title { font-size: 20px; font-weight: 800; color: #111827; margin: 24px 0 20px 0; }
+
+    .m-uc-service-card { display: flex; gap: 16px; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #e5e7eb; }
+    .m-uc-service-card:last-child { border-bottom: none; margin-bottom: 0; }
+    .m-uc-card-left { flex: 1; }
+    .m-uc-service-title { font-size: 15px; font-weight: 700; color: #111827; line-height: 1.4; margin-bottom: 6px; }
+    
+    .m-uc-service-rating { font-size: 12px; color: #6b7280; display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
+    .m-uc-service-rating i { color: #111827; font-size: 10px; }
+    .m-uc-service-rating span { border-bottom: 1px dashed #9ca3af; color: #111827; font-weight: 700; }
+    
+    .m-uc-service-price { font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+    .m-uc-dotted-hr { border: none; border-top: 1px dashed #d1d5db; margin: 12px 0; }
+    
+    .m-uc-service-list { list-style: disc; padding-left: 16px; margin: 0 0 16px 0; color: #4b5563; font-size: 12px; line-height: 1.5; }
+    .m-uc-service-list li { margin-bottom: 4px; padding-left: 4px; }
+    .m-uc-service-list li::marker { color: #111827; font-size: 10px; }
+    
+    .m-uc-view-details { font-size: 13px; font-weight: 700; color: #6d28d9; text-decoration: none; }
+
+    .m-uc-card-right { width: 100px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+    .m-uc-image-wrap { width: 100px; height: 100px; background-color: #f3f4f6; border-radius: 12px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .m-uc-image-wrap img { width: 80%; height: 80%; object-fit: contain; }
+    
+    .m-uc-add-btn { position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; color: #6d28d9; font-weight: 700; font-size: 13px; padding: 6px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); cursor: pointer; }
+    .m-uc-options-text { font-size: 11px; color: #6b7280; margin-top: 22px; }
+}
+
+@media (max-width: 576px) {
+    .service-landing-page { padding: 20px 0 30px 0; }
+    .landing-container { padding: 0 16px; }
+    .offer-content { font-size: 13px; }
+    .feature-pill { font-size: 11px; padding: 6px 12px; }
+    .service-grid { grid-template-columns: 1fr; } 
+    .banner-masonry-grid { column-count: 1; }
+    .visual-banner:nth-child(n) { aspect-ratio: 16 / 9; }
+    .sa-container { padding: 0 16px; }
 }
