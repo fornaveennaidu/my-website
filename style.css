@@ -178,7 +178,7 @@ body { font-family: var(--font-main); color: var(--text-dark); background: #ffff
 @media (max-width: 768px) {
     /* 🎨 BRAND ALIGNED MOBILE HERO (Custom Gradient) */
     .m-hero-container { 
-        background: linear-gradient(135deg, #f5d79f, #ff7b47) !important; 
+        background: linear-gradient(135deg, #244c44) !important; 
         padding: 16px 16px 40px 16px; 
         position: relative;
         z-index: 20;
