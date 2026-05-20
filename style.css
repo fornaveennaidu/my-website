@@ -1,404 +1,196 @@
-:root {
-    --primary-green: #204e41;
-    --primary-dark: #111827;
-    --accent-orange: #FF7A00; 
-    --hover-orange: #e66b00;
-    --text-dark: #333333;
-    --text-muted: #757575;
-    --bg-white: #ffffff;
-    --border-color: #eaeaea;
-    --font-main: 'Poppins', sans-serif; 
+/* =========================================
+   ✨ DAKSH PREMIUM TAILWIND ANIMATION CORE
+   ========================================= */
+
+/* Scrollbar Customization */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f5f3ff; }
+::-webkit-scrollbar-thumb { background: #c4b5fd; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a78bfa; }
+
+body.modal-open { overflow: hidden; }
+
+/* ⚡ Premium Startup Loader */
+.premium-loader-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s ease;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { font-family: var(--font-main); color: var(--text-dark); background: #ffffff; }
-
-/* =========================================
-   🚨 STRICT ISOLATION BREAKPOINTS 🚨
-   ========================================= */
-.desktop-view, .mobile-view { display: none !important; }
-
-@media (min-width: 769px) { .desktop-view { display: block !important; } }
-@media (max-width: 768px) { 
-    .mobile-view { 
-        display: block !important; 
-        padding-bottom: 125px; /* Padding for floating dock */
-    } 
+.loader-ring-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: premiumLoaderFloat 3s ease-in-out infinite;
 }
 
-/* =========================================
-   💻 DESKTOP NAV STYLING
-   ========================================= */
-.top-banner { background-color: var(--primary-green); color: var(--bg-white); padding: 10px 40px; display: flex; justify-content: center; align-items: center; }
-.banner-content { display: flex; align-items: center; gap: 20px; font-size: 15px; font-weight: 500; }
-.banner-content .price { font-weight: 800; font-size: 16px; text-decoration: underline; text-underline-offset: 3px; }
-
-.navbar { background-color: #103f30; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: none; }
-.nav-left, .nav-right { display: flex; align-items: center; }
-.nav-left { gap: 35px; }
-
-.brand-badge { background-color: transparent; padding: 8px 0; cursor: pointer; }
-.logo-text { color: var(--bg-white); font-size: 26px; font-weight: 800; }
-.logo-dot { color: var(--accent-orange); }
-
-.location-selector { display: flex; align-items: center; gap: 10px; cursor: pointer; }
-.location-icon { color: var(--accent-orange); font-size: 20px; }
-.location-info { display: flex; flex-direction: column; }
-.location-label { font-size: 10px; color: #9ca3af; font-weight: 600; }
-.location-city { font-size: 14px; font-weight: 600; color: #ffffff; }
-
-.nav-right { gap: 15px; }
-.action-divider { width: 1px; height: 30px; background-color: rgba(255, 255, 255, 0.15); margin: 0 5px; }
-
-.btn-support { text-decoration: none; color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.2); padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; display: flex; gap: 8px; transition: background-color 0.3s; }
-.btn-support:hover { background-color: rgba(255, 255, 255, 0.1); }
-.btn-cart { background-color: var(--accent-orange); color: var(--bg-white); border: none; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; display: flex; gap: 8px; cursor: pointer; transition: background-color 0.3s; }
-.btn-cart:hover { background-color: var(--hover-orange); }
-
-/* =========================================
-   ✨ DESKTOP MAIN VIEW: SERVICE LANDING
-   ========================================= */
-.service-landing-page { width: 100%; padding: 20px 0 60px 0; background-color: transparent; }
-.landing-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-
-.landing-headline { font-size: clamp(38px, 4.5vw, 52px); color: #111827; font-weight: 800; line-height: 1.15; letter-spacing: -1px; margin-bottom: 15px; }
-.hero-subtitle { font-size: 18px; color: #4b5563; font-weight: 500; margin-bottom: 24px; line-height: 1.5; }
-
-.offer-banner { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 50px; padding: 10px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: inline-flex; align-items: center; margin-bottom: 24px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.offer-banner:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-.offer-content { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #4b5563; font-weight: 600; }
-.offer-icon { color: var(--accent-orange); font-size: 16px; }
-
-.features-row { display: flex; gap: 12px; margin-bottom: 35px; flex-wrap: wrap; }
-.feature-pill { background-color: var(--pill-bg); color: var(--pill-text); padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
-
-.service-selection-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 26px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-.box-title { font-size: 18px; font-weight: 800; color: #111827; margin-bottom: 16px; }
-.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-
-/* 🎨 BRAND ALIGNED SERVICE CARDS (DESKTOP) */
-.ref-service-card,
-.ref-service-card:nth-child(n) { 
-    background-color: #ffffff !important; 
-    border: 1px solid #f3f4f6 !important; 
-    border-radius: 12px; 
-    padding: 12px 16px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    text-decoration: none; 
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important; 
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+.loader-d-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #4c1d95; /* Dark Purple */
+    text-shadow: 0 4px 20px rgba(76, 29, 149, 0.25);
+    transform: translateX(3px); /* Optical centering for letter D */
 }
 
-.ref-service-card:hover { 
-    transform: translateY(-3px) scale(1.02) !important; 
-    box-shadow: 0 10px 24px rgba(32, 78, 65, 0.08) !important; 
-    border-color: rgba(32, 78, 65, 0.15) !important; 
+.loader-orbit {
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    animation: premiumOrbit 1.5s linear infinite;
 }
 
-.full-width-card { grid-column: 1 / -1; }
-
-.ref-sc-title { font-size: 13px; font-weight: 700; color: #1f2937; line-height: 1.3; }
-
-/* Desktop Brand Tint Icon Box */
-.ref-sc-icon { 
-    width: 60px; height: 60px; border-radius: 14px; 
-    background-color: #f6f8f7 !important; 
-    border: 1px solid rgba(32, 78, 65, 0.05);
-    display: flex; align-items: center; justify-content: center; 
-    transition: transform 0.3s ease; 
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+.loader-orbit-dot {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #a855f7; /* Bright Purple Accent */
+    border-radius: 50%;
+    box-shadow: 0 0 20px 4px rgba(168, 85, 247, 0.6), inset 0 0 4px rgba(255,255,255,0.8);
 }
 
-.ref-service-card:hover .ref-sc-icon { transform: scale(1.1); }
-.ref-sc-icon img { width: 38px; height: 38px; object-fit: contain; }
+@keyframes premiumOrbit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
-.banner-masonry-grid { column-count: 2; column-gap: 20px; width: 100%; }
-.visual-banner { break-inside: avoid; margin-bottom: 20px; width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); background-color: #f3f4f6; }
-.visual-banner:nth-child(1) { aspect-ratio: 4 / 5; } 
-.visual-banner:nth-child(2) { aspect-ratio: 5 / 4; } 
-.visual-banner:nth-child(3) { aspect-ratio: 5 / 4; } 
-.visual-banner:nth-child(4) { aspect-ratio: 4 / 5; } 
-.visual-banner img { width: 100%; height: 100%; object-fit: cover; animation: premiumBreathe 20s infinite alternate ease-in-out; }
-.visual-banner:nth-child(even) img { animation-delay: -10s; animation-direction: alternate-reverse; }
-
-@keyframes premiumBreathe { 0% { transform: scale(1); } 100% { transform: scale(1.12); } }
-
-/* =========================================
-   📍 SECTION 2: SERVICE AREAS MARQUEE
-   ========================================= */
-.service-areas-section { width: 100%; background-color: #ffffff; padding: 35px 0; border-top: none; overflow: hidden; position: relative; }
-.sa-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
-.sa-heading { font-size: 16px; font-weight: 800; color: #1f2937; margin-bottom: 20px; }
-.sa-marquee-wrapper { position: relative; width: 100%; display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
-.sa-marquee-track { display: flex; gap: 40px; align-items: center; white-space: nowrap; animation: scrollLeftToRight 80s linear infinite; }
-.sa-item { font-size: 17px; font-weight: 700; color: #8c929e; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease; cursor: default; }
-.sa-item:hover { color: var(--accent-orange); }
-.sa-item i { font-size: 14px; color: rgba(255, 122, 0, 0.3); transition: color 0.3s ease; }
-.sa-item:hover i { color: var(--accent-orange); }
-@keyframes scrollLeftToRight { 0% { transform: translateX(calc(-50% - 20px)); } 100% { transform: translateX(0); } }
-
-/* =========================================
-   ✨ SERVICE DETAILS PAGE (TWO-COLUMN DESKTOP)
-   ========================================= */
-.sd-page-wrapper { width: 100%; padding: 60px 0 100px 0; background-color: #f9fafb; min-height: calc(100vh - 75px); }
-.sd-container { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: flex-start; }
-
-.sd-left { display: flex; flex-direction: column; gap: 16px; }
-.sd-headline { font-size: clamp(32px, 4vw, 46px); color: #111827; font-weight: 800; line-height: 1.2; letter-spacing: -1px; }
-.sd-rating-row { display: flex; align-items: center; gap: 12px; }
-.sd-stars { color: #fbbf24; font-size: 16px; display: flex; gap: 3px; }
-.sd-rating-text { font-size: 14px; color: #6b7280; font-weight: 500; }
-.sd-offer-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff7ed; color: #0369a1; border: 1px solid #bae6fd; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 700; width: fit-content; margin-top: 10px; }
-
-.sd-right { width: 100%; }
-.sd-booking-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); display: flex; flex-direction: column; }
-.sd-box-top { display: flex; flex-direction: column; gap: 6px; }
-.sd-slot-label { font-size: 13px; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-.sd-slot-time { font-size: 18px; color: #111827; font-weight: 800; }
-.sd-divider { border: none; border-top: 1px dashed #e5e7eb; margin: 24px 0; }
-.sd-box-bottom { display: flex; flex-direction: column; }
-.sd-select-label { font-size: 16px; color: #111827; font-weight: 700; }
+@keyframes premiumLoaderFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
 
 
-/* =========================================
-   📱 MOBILE-ONLY CSS OVERRIDES
-   ========================================= */
-@media (max-width: 992px) {
-    .landing-container { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
-    .banner-masonry-grid { column-count: 2; column-gap: 16px; }
-    .visual-banner { margin-bottom: 16px; }
-    .sa-container { padding: 0 24px; }
-    .sd-container { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+/* 💎 Custom Glass Utilities */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px -2px rgba(91, 33, 182, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 🧲 Magnetic Button Core */
+.magnetic-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+.magnetic-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+.magnetic-btn:hover::after { opacity: 1; }
+
+.magnetic-hover {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* 🎬 Cinematic Scroll Reveals */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+.reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal-stagger.is-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.1s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.2s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.3s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.4s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.5s; }
+
+/* 🌌 Ambient Floating Orbs */
+.ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: floatOrb 20s infinite alternate ease-in-out;
+}
+@keyframes floatOrb {
+    0% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(-40px, 60px) scale(1.1); }
+    100% { transform: translate(40px, -40px) scale(0.9); }
+}
+
+/* 🎈 Float Animations for Banner UI */
+.float-anim {
+    animation: premiumFloat 8s ease-in-out infinite;
+}
+.float-anim-reverse {
+    animation: premiumFloat 6s ease-in-out infinite reverse;
+}
+.float-anim-delay {
+    animation: premiumFloat 7s ease-in-out infinite 1s;
+}
+
+@keyframes premiumFloat { 
+    0% { transform: translateY(0px); } 
+    50% { transform: translateY(-12px); } 
+    100% { transform: translateY(0px); } 
+}
+
+/* 💫 Infinite Marquee */
+.mask-edges {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+.animate-marquee {
+    animation: scrollLeftToRight 40s linear infinite;
+}
+@keyframes scrollLeftToRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 2rem)); }
+}
+
+/* Modal Animations */
+.modal-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.modal-active .modal-content-box {
+    transform: scale(1) !important;
 }
 
 @media (max-width: 768px) {
-    
-    /* ✨ PREMIUM MOBILE HERO (Gradient, Image Left, Text Right) */
-    .m-hero-container { 
-        background: linear-gradient(135deg, #f5d79f, #ff7b47) !important; 
-        padding: 16px 16px 40px 16px; 
-        position: relative;
-        z-index: 20;
-        overflow: hidden; /* Prevents horizontal scroll from large left image */
-    }
-    
-    .m-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; position: relative; z-index: 30; }
-    .m-logo { font-size: 24px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; }
-    
-    /* Premium Yellow Accents (#f0ad25) */
-    .m-dot { color: #f0ad25 !important; }
-    .m-location i.fa-location-dot { color: #f0ad25 !important; }
-    .text-dark-blue { color: #f0ad25 !important; } 
-    
-    .m-location { font-size: 14px; font-weight: 600; color: #ffffff; display: flex; align-items: center; gap: 6px; }
-    .m-chevron { font-size: 10px; margin-left: 2px; }
-
-    /* Layout: Image Left, Text Right */
-    .m-hero-split {
-        display: flex;
-        justify-content: flex-end; /* Pushes text container to the right */
-        align-items: center;
-        margin-top: 16px;
-        position: relative;
-        min-height: 200px;
-    }
-    
-    /* Text Container (Right Side) */
-    .m-hero-left {
-        width: 58%; 
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .m-hero-right { width: 40%; }
-    
-    /* Big Image (Left Side) - No Animation, No Gap */
-    .m-hero-right img {
-        position: absolute;
-        bottom: -40px; 
-        left: -40px; 
-        width: 250px; 
-        z-index: 10;
-        filter: drop-shadow(0 15px 20px rgba(0,0,0,0.25));
-    }
-    
-    /* Premium Typography (White text with soft shadows) */
-    .m-landing-headline {
-        color: #ffffff;
-        font-size: 24px;
-        font-weight: 800;
-        text-align: left;
-        line-height: 1.25;
-        margin-bottom: 8px;
-        letter-spacing: -0.5px;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.15); 
-    }
-    
-    .m-hero-sub {
-        color: rgba(255, 255, 255, 0.95);
-        font-size: 11px;
-        line-height: 1.4;
-        margin-bottom: 16px;
-        font-weight: 500;
-        text-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-    
-    /* Frosted Glass Offer Badge */
-    .m-offer-badge {
-        background: rgba(255, 255, 255, 0.2); 
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.35);
-        color: #ffffff;
-        font-size: 11px;
-        font-weight: 700;
-        padding: 6px 12px;
-        border-radius: 50px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        margin-bottom: 16px;
-    }
-    
-    .m-offer-badge i {
-        color: #f0ad25; 
-        font-size: 13px;
-    }
-    
-    /* USP Features */
-    .m-hero-features { display: flex; flex-direction: column; gap: 8px; }
-    .m-hero-features div { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #ffffff; font-weight: 600; text-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-    .m-hero-features i { color: #f0ad25; font-size: 13px; }
-
-    /* Home Page Panels */
-    .m-bottom-panel { background: var(--bg-white); border-top-left-radius: 24px; border-top-right-radius: 24px; padding: 24px 16px 30px 16px; margin-top: -16px; position: relative; z-index: 10; }
-    .m-divider-header { display: flex; align-items: center; text-align: center; margin-bottom: 20px; color: #9ca3af; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
-    .m-divider-header::before, .m-divider-header::after { content: ''; flex: 1; border-bottom: 1px solid #e5e7eb; margin: 0 12px; }
-    
-    .m-service-h-scroll { display: flex; overflow-x: auto; gap: 12px; padding: 4px 4px 16px 4px; scroll-snap-type: x mandatory; scrollbar-width: none; }
-    .m-service-h-scroll::-webkit-scrollbar { display: none; }
-
-    /* 🎨 BRAND ALIGNED MOBILE CARDS (White + Soft Shadow) */
-    .m-img2-card,
-    .m-img2-card:nth-child(n) { 
-        flex: 0 0 105px; 
-        height: 140px; 
-        display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; padding: 16px 8px; scroll-snap-align: start; text-align: center;
-        background-color: #ffffff !important; 
-        border: 1px solid #f3f4f6 !important;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; 
-    }
-    .m-img2-card:active { 
-        transform: scale(0.96) !important; 
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
-        border-color: var(--accent-orange) !important; 
-    }
-    .m-img2-card img { width: 56px; height: 56px; object-fit: contain; margin-bottom: 10px; }
-    .m-img2-text { display: flex; flex-direction: column; gap: 4px; }
-    .m-img2-sub { font-size: 9px; color: #6b7280; font-weight: 500; line-height: 1; }
-    .m-img2-main { font-size: 11px; font-weight: 700; color: #111827; line-height: 1.2; }
-
-    /* Fix Washing Machine Icon Size globally */
-    .service-grid .ref-service-card:nth-child(4) .ref-sc-icon img { transform: scale(1.2); }
-    .m-service-h-scroll .m-img2-card:nth-child(4) img { transform: scale(1.2); }
-
-    .m-sa-wrapper { margin: 0 -16px; overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
-    .sa-item { font-size: 14px; gap: 6px; }
-    .sa-item i { font-size: 12px; }
-    .sa-marquee-track { gap: 24px; }
-
-    /* ✨ iPHONE HOME SCREEN DOCK FOOTER */
-    .m-app-footer {
-        position: fixed;
-        bottom: 20px; 
-        left: 20px;
-        width: calc(100% - 40px); 
-        height: 90px; 
-        background: rgba(255, 255, 255, 0.55); 
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 5px 10px; 
-        box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-        z-index: 9999;
-        border-radius: 30px; 
-    }
-    .m-nav-item { text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; flex: 1; height: 100%; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-    .m-nav-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
-    .m-nav-icon img { width: 36px; height: 36px; object-fit: contain; opacity: 0.4; filter: grayscale(100%); transition: opacity 0.3s ease, filter 0.3s ease; }
-    .m-nav-text { display: block; font-size: 11px; font-weight: 600; color: #6b7280; transition: all 0.3s ease; }
-    .m-nav-item.active { transform: none !important; }
-    .m-nav-item.active .m-nav-icon img { opacity: 1; filter: grayscale(0%); }
-    .m-nav-item.active .m-nav-text { color: #111827; font-weight: 700; }
-
-    /* ✨ APP-STYLE SERVICE DETAILS (MOBILE) */
-    .m-uc-container { padding: 24px 16px 0 16px; background: #ffffff; position: relative; z-index: 5; }
-    .m-uc-title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-    .m-uc-h1 { font-size: 24px; font-weight: 800; color: #111827; line-height: 1.25; }
-    
-    .m-uc-slot-badge { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; text-align: center; flex-shrink: 0; margin-left: 10px; }
-    .m-uc-slot-top { background: #ecfdf5; color: #059669; font-size: 10px; font-weight: 700; padding: 4px 8px; }
-    .m-uc-slot-bottom { background: #ffffff; color: #111827; font-size: 11px; font-weight: 700; padding: 6px 8px; }
-
-    .m-uc-rating { font-size: 13px; color: #4b5563; display: flex; align-items: center; gap: 6px; margin-bottom: 24px; font-weight: 500; }
-    .m-uc-rating i { color: #111827; font-size: 12px; }
-    .m-uc-rating span { border-bottom: 1px dashed #9ca3af; color: #111827; font-weight: 700; }
-
-    .m-uc-warranty-box { background: #f9fafb; border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 500; color: #4b5563; margin-bottom: 16px; }
-    .m-uc-warranty-box i.fa-shield-halved { font-size: 16px; color: #111827; }
-
-    .m-uc-coupon-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 24px; }
-    .m-uc-coupon-title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
-    .m-uc-coupon-desc { font-size: 12px; color: #6b7280; }
-
-    .m-uc-thick-divider { height: 8px; background-color: #f3f4f6; width: 100%; position: relative; z-index: 5; }
-    .m-uc-section-title { font-size: 20px; font-weight: 800; color: #111827; margin: 24px 0 20px 0; }
-
-    .m-uc-service-card { display: flex; gap: 16px; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #e5e7eb; }
-    .m-uc-service-card:last-child { border-bottom: none; margin-bottom: 0; }
-    .m-uc-card-left { flex: 1; }
-    .m-uc-service-title { font-size: 15px; font-weight: 700; color: #111827; line-height: 1.4; margin-bottom: 6px; }
-    
-    .m-uc-service-rating { font-size: 12px; color: #6b7280; display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
-    .m-uc-service-rating i { color: #111827; font-size: 10px; }
-    .m-uc-service-rating span { border-bottom: 1px dashed #9ca3af; color: #111827; font-weight: 700; }
-    
-    .m-uc-service-price { font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 12px; }
-    .m-uc-dotted-hr { border: none; border-top: 1px dashed #d1d5db; margin: 12px 0; }
-    
-    .m-uc-service-list { list-style: disc; padding-left: 16px; margin: 0 0 16px 0; color: #4b5563; font-size: 12px; line-height: 1.5; }
-    .m-uc-service-list li { margin-bottom: 4px; padding-left: 4px; }
-    .m-uc-service-list li::marker { color: #111827; font-size: 10px; }
-    
-    .m-uc-view-details { font-size: 13px; font-weight: 700; color: #6d28d9; text-decoration: none; }
-
-    .m-uc-card-right { width: 100px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
-    .m-uc-image-wrap { width: 100px; height: 100px; background-color: #f3f4f6; border-radius: 12px; position: relative; display: flex; align-items: center; justify-content: center; }
-    .m-uc-image-wrap img { width: 80%; height: 80%; object-fit: contain; }
-    
-    .m-uc-add-btn { position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; color: #6d28d9; font-weight: 700; font-size: 13px; padding: 6px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); cursor: pointer; }
-    .m-uc-options-text { font-size: 11px; color: #6b7280; margin-top: 22px; }
-}
-
-@media (max-width: 576px) {
-    .service-landing-page { padding: 20px 0 30px 0; }
-    .landing-container { padding: 0 16px; }
-    .offer-content { font-size: 13px; }
-    .feature-pill { font-size: 11px; padding: 6px 12px; }
-    .service-grid { grid-template-columns: 1fr; } 
-    .banner-masonry-grid { column-count: 1; }
-    .visual-banner:nth-child(n) { aspect-ratio: 16 / 9; }
-    .sa-container { padding: 0 16px; }
+    /* Prevent content hiding behind fixed mobile nav */
+    body { padding-bottom: 100px; }
 }
